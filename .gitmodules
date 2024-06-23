@@ -1,3 +1,6 @@
 [submodule "extlibs/code-virtualizer-sdk"]
 	path = extlibs/code-virtualizer-sdk
 	url = https://github.com/orange-cpp/code-virtualizer-sdk
+[submodule "extlibs/titanfall-2-sdk"]
+	path = extlibs/titanfall-2-sdk
+	url = https://github.com/orange-cpp/titanfall-2-sdk
