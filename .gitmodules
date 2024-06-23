@@ -4,3 +4,6 @@
 [submodule "extlibs/titanfall-2-sdk"]
 	path = extlibs/titanfall-2-sdk
 	url = https://github.com/orange-cpp/titanfall-2-sdk
+[submodule "extlibs/imgui/extlibs/freetype"]
+	path = extlibs/imgui/extlibs/freetype
+	url = https://gitlab.freedesktop.org/freetype/freetype.git

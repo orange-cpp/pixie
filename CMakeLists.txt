@@ -9,8 +9,9 @@ option(BUILD_WITH_CODE_VIRTUALIZER "Build with CodeVirtulizer support" OFF)
 add_library(pixie MODULE source/main.cpp)
 
 add_subdirectory(extlibs)
+add_subdirectory(source)
 
-target_link_libraries(pixie PRIVATE titanfall2-sdk)
+target_link_libraries(pixie PRIVATE titanfall2-sdk imgui)
 
 if (BUILD_WITH_CODE_VIRTUALIZER)
     target_compile_definitions(pixie PRIVATE USE_CV)

@@ -6,6 +6,10 @@
 #include <Windows.h>
 #include <titanfall_2/Context.h>
 #include <titanfall_2/UserCmd.h>
+#include <memory>
+#include "overlay/Overlay.h"
+#include <d3d11.h>
+
 
 #ifdef USE_CV
 #   include<CodeVirtualizer/VirtualizerSDK.h>
@@ -27,6 +31,11 @@ namespace pixie
         auto& ctx = titanfall_2::Context::Get();
         ctx.SetOnCreateMove(CreateMove);
 
+        ctx.SetOnPresent([](auto* ptr)
+        {
+            static auto overlay = std::make_unique<gui::Overlay>(ptr);
+            overlay->Render();
+        });
         while (!GetAsyncKeyState(VK_END))
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         FreeLibrary(moduleHandle);
